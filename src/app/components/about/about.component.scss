@@ -1,0 +1,227 @@
+@import "../../../assets/styles/imports";
+@import "../../../assets/styles/variables";
+
+@media (max-width: 800px){
+
+    .container{
+
+        section{
+            display: grid;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            grid-template-columns: 1fr 2fr;
+            grid-template-rows: 1fr 1fr;
+
+            img{
+                margin: 0px auto;
+                grid-row: 1/3;
+                grid-column: 1/2;
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                opacity: 0;
+                animation: show_img 2s ease forwards;
+            }
+            @keyframes show_img {
+                to{
+                    opacity: 1;
+                }
+            }
+            .h1{
+                overflow: hidden;
+                grid-row: 1/2;
+                grid-column: 2/3;
+                align-self: flex-end;
+                padding-bottom: 10px;
+
+                h1{
+                    font-family: $WorkSans;
+                    font-weight: 600;
+                    color: $white;
+                    font-size: 20px;
+                    transform: translateY(100px);
+                    animation: show_text_trans 1s ease forwards 400ms;
+                }
+            }
+            .h2{
+                padding-top: 10px;
+                width: 0%;
+                height: 50px;
+                margin: 0px auto;
+                border-top: 3px solid $pink;
+                grid-row: 2/3;
+                grid-column: 2/3;
+                overflow: hidden;
+                animation: show_border 1s ease forwards;
+                
+                h2{
+                    display: block;
+                    // width: 80%;
+                    font-family: $Ubuntu;
+                    font-weight: 400;
+                    color: $white;
+                    font-size: 18px;
+                    transform: translateY(100px);
+                    animation: show_text_trans 1s ease forwards 400ms;
+                }
+                @keyframes show_text_trans {
+                    to{
+                        transform: translateY(0px);
+                    }
+                }
+            }
+            @keyframes show_border {
+                to{
+                    width: 80%;
+                }
+            }
+        }
+        #description-about{
+            transform: translate(100px);
+            animation: show_pa 1s ease forwards;
+
+            .description-p{
+                margin-bottom: 0;
+                margin: 30px 0px;
+                line-height: 27px;
+                color: $white;
+                font-family: $Ubuntu;
+                font-size: 15px;
+                text-align: justify;
+            }
+        }
+        @keyframes show_pa {
+            to{
+                opacity: 1;
+                transform: translate(0px);
+            }
+        }
+    }
+}
+@media (min-width: 800px){
+    .container{
+        
+        .card{
+            position: relative;
+            z-index: 11;
+            background: white;
+            padding: 30px 50px;
+            border-radius: 30px;
+            box-shadow: 4px 4px 10px #555;
+            animation: show_card 1s ease-in-out forwards;
+
+            section{
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-rows: 1fr;
+                align-items: center;
+        
+                img{
+                    grid-column: 3/4;
+                    grid-row: 1;
+                    justify-self: end;
+                    float: right;
+                    width: 200px;
+                    height: 200px;
+                    border-radius: 50%;
+                }
+                .h1{
+                    grid-column: 1/2;
+                    grid-row: 1;
+                    overflow: hidden;
+                    border-right: 3px solid $pink;
+                    
+                    h1{
+                        font-family: $WorkSans;
+                        font-weight: 600;
+                        color: $dark-blue;
+                        font-size: 36px;
+                    }
+                }
+                .h2{
+                    grid-column: 2/3;
+                    grid-row: 1;
+                    justify-self: center;
+                    
+                    h2{
+                        display: block;
+                        font-family: $Ubuntu;
+                        font-weight: 400;
+                        color: $dark-blue;
+                        font-size: 30px;
+                    }
+                }
+            }
+        
+
+            #description-about{
+
+                .description-p{
+                    margin: 30px 0px;
+                    line-height: 27px;
+                    color: $dark-blue;
+                    font-family: $Ubuntu;
+                    font-size: 18px;
+                    text-align: justify;
+                }
+            }
+        }
+        @keyframes show_card {
+            from{
+                transform: translateX(500px);
+            }
+            to{
+                transform: translateX(0px);
+            }
+        }
+    }
+}
+
+@media (max-width: 1080px) and (min-width: 800px){
+    .container{
+        
+        .card{
+
+            section{
+                grid-template-rows: auto auto;
+                grid-template-columns: auto auto;
+                
+                img{
+                    grid-row: 1/3;
+                    grid-column: 2;
+                    
+                }
+                .h1{
+                    overflow: visible;
+                    grid-row: 1;
+                    grid-column: 1;
+                    border: none;
+                    border-bottom: 3px solid $pink;
+                    justify-content: center;
+                    width: 95%;
+                    height: 100px;
+                    
+                    h1{
+                        font-size: 30px;
+                        text-align: center;
+                    }
+                    
+                }
+                .h2{
+                    padding-top: 20px;
+                    grid-row: 2;
+                    grid-column: 1;
+                    height: 100px;
+                    justify-content: center;
+                    
+                    h2{
+                        font-size: 24px;
+                        text-align: center;
+                    }
+                    
+                }
+            }
+        }
+    }
+}

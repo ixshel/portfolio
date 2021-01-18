@@ -1,0 +1,15 @@
+
+<div class="container">
+    <div 
+        class="card cursor-purple" 
+        *ngFor="let i of work" 
+        [ngClass]="{cardWorkInvert: i.indice % 2 == 0 , cardWork: i.indice % 2 != 0}"
+    >
+        <h1>{{i.project}}</h1>
+        <img src="{{i.image}}" alt="{{i.project}}">
+        <a class="btn-blue cursor-border" href="{{i.url}}" target="_blank">See the project</a>
+    </div>
+</div>
+
+
+<app-footer></app-footer>

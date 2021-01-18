@@ -1,0 +1,202 @@
+@import "../../../assets/styles/imports";
+@import "../../../assets/styles/variables";
+
+.container{
+
+    div{
+        // overflow: hidden;
+
+        h1{
+            position: relative;
+            z-index: 11;
+            display: block;
+            color: $pink;
+            font-weight: 400;
+            
+            .line {
+                font-size: 19px;
+                font-family: $SourceCodePro;
+                border-right: 2px solid rgba(75, 49, 49, 0.75);
+                white-space: nowrap;
+                overflow: hidden;
+            }
+            .anim-typewriter {
+                animation: 
+                typewriter 3s steps(40) 1s 1 normal both,
+                blinkTextCursor 1000ms steps(40) infinite normal;
+            }
+            @keyframes typewriter {
+                from {
+                    width: 0;
+                }
+                to {
+                    width: 289px;
+                }
+            }
+        
+            @keyframes blinkTextCursor {
+                from {
+                    border-right-color: rgba(255, 255, 255, 0.75);
+                }
+                to {
+                    border-right-color: transparent;
+                }
+            }
+
+        }
+    }
+
+    @keyframes show_text {
+        from{
+            transform: translateY(100px);
+        }
+        to{
+            transform: translateY(0%);
+        }
+    }
+
+    @keyframes fade_text {
+        to{
+            opacity: 1;
+        }
+    }
+    
+    .subtitle{
+        overflow: hidden;
+        
+        h2{
+            transform: translateY(100px);
+            display: block;
+            width: 90%;
+            margin-top: 21px;
+            color: $white;
+            font-size: 30px;
+            font-family: $WorkSans;
+            animation: show_text 1200ms ease-in-out forwards 3.5s;
+        }
+    }
+    #text-p{
+        margin-top: 30px;
+        color: $white;
+        font-family: $Ubuntu;
+        font-size: 17px;
+        line-height: 35px;
+        opacity: 0;
+        text-align: justify;
+        animation: fade_text 1s ease-in-out forwards 4s;
+        
+        span{
+            display: block;
+            margin-top: 10px;  
+            
+            a{
+                color: $blue;
+            }
+        }
+    }
+    #btn-contact{
+        margin: 20px 0px;
+        opacity: 0;
+        animation: fade_text 1s ease-in-out forwards 4s;
+    }
+    .profile-image{
+        display: none;
+    }
+}
+
+@media (min-width: 800px){
+    .container{
+        
+        .home{
+            display: grid;
+            grid-template-rows: auto;
+            grid-template-columns: 1fr;
+
+            .title{
+                grid-row: 1;
+                grid-column: 1;
+
+                h1{
+
+                    .line{
+                        font-size: 25px;
+                    }
+                    .anim-typewriter {
+                        animation: 
+                        typewriter_desktop 3s steps(40) 1s 1 normal both,
+                        blinkTextCursor_desktop 1000ms steps(40) infinite normal;
+                    }
+                    @keyframes typewriter_desktop {
+                        from {
+                            width: 0;
+                        }
+                        to {
+                            width: 380px;
+                        }
+                    }
+                
+                    @keyframes blinkTextCursor_desktop {
+                        from {
+                            border-right-color: rgba(255, 255, 255, 0.75);
+                        }
+                        to {
+                            border-right-color: transparent;
+                        }
+                    }
+                }
+            }
+            .subtitle{
+                grid-row: 2;
+                grid-column: 1;
+            }
+            #text-p{
+                grid-row: 3;
+                grid-column: 1;
+                width: 100%;
+    
+                span{
+    
+                    a{
+                        padding-top: 10px;
+                        display: inline-block;
+                    }
+                }
+            }
+            #btn-contact{
+                grid-row: 4;
+                grid-column: 1;
+                transition: all 600ms;
+            }
+           
+        }
+    }
+}
+
+@media (min-width: 1024px){
+    .container{
+
+        .home{
+            grid-template-columns: auto auto;
+            
+            #text-p{
+                width: 90%;
+            }
+            
+            .profile-image{
+                grid-column: 2/3;
+                grid-row: 1/4;
+                display: block;
+                
+                img{
+                    opacity: 0;
+                    width: 100%;
+                    border-radius: 300px;
+                    animation: fade_text 1s ease-in-out forwards 4s;
+                }
+                
+            }
+        }
+    }
+}
+@media (max-width: 1024px) and (min-width: 800px){
+}

@@ -1,0 +1,182 @@
+@import "../assets/styles/imports";
+@import "../assets/styles/variables";
+
+.loading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    display: none;
+
+    svg{
+        width: 170px;
+        filter: drop-shadow( 0px 0px 10px $purple);
+        opacity: 0;
+        animation: turn_on 7000ms ease-in 500ms;
+
+    }
+    @keyframes turn_on {
+        0%{
+            opacity: 0;
+        }25%{
+            opacity: 1;
+        }50%{
+            opacity: 0.5;
+        }75%{
+            opacity: 1;
+        }100%{
+            opacity: 0;
+        }
+    }
+}
+
+@media (min-width: 800px){
+    //Dots
+    .container-dots{
+        position: fixed;
+        overflow: hidden;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        
+        #dots {
+            position: absolute;
+            width: 1200px;
+            height: 1200px;
+            left: 100%;
+            top: 100%;
+            transform: translate(-50%, -50%);
+            border-radius: 50px;
+            background: linear-gradient($background, $pink);
+            opacity: 0;
+            animation: borderAnim 4s linear infinite, dot_opacity 4s ease 300ms forwards;
+            z-index: 0;
+        }
+        @keyframes borderAnim {
+            0%,
+            100% {
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            }
+            25%,
+            75% {
+                border-radius: 64% 36% 72% 28% / 35% 60% 40% 65%;
+            }
+            50% {
+            border-radius: 46% 54% 38% 62% / 66% 38% 62% 34%;
+            }
+        }
+        @keyframes dot_opacity {
+            to{
+                opacity: 1;
+            }
+        }
+    }
+
+    header{
+        
+        .container-menu{
+            width: 200px;
+            position: fixed;
+
+            nav{
+                transform: none;
+                margin-left: -20px;
+    
+                ul{
+                    background: transparent;
+                    list-style: none;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    margin-top: 50vh;
+                    transform: translateY(-55%);
+                    
+                    
+                    li{
+                        padding: 15px;
+                        transition: all 300ms;
+                        margin: 20px 0px;
+                        justify-content: center;
+                        cursor: url('../assets/img/cursor/cursor-custom-border.svg'), auto;
+                        
+                        a{
+                            width: 27px;
+                            height: 27px;
+                            border-radius: 50%;
+                            overflow: hidden;
+                            border: 1px solid $white;
+                            font-size: 20px;
+                            text-decoration: none;
+                            color: transparent;
+                            transition: all 600ms;
+                        }
+
+                        svg{
+                            margin-top: -12px;
+                            display: block;
+                            position: absolute;
+                            opacity: 0;
+                            transition: all 300ms;
+                        }
+                    }
+                    li:hover{
+                        a{
+                            scale: 1.1;
+                            transition: all 600ms;
+                            text-shadow: 0px 0px 15px $pink;
+                        }
+                    }
+
+                    .active{
+                        animation: none;
+                        
+                        a{
+                            font-size: 25px;
+                            transition: all 300ms;
+                            color: transparent;
+                            width: 27px;
+                            height: 27px;
+                            border-radius: 0%;
+                            overflow: hidden;
+                            border: 1px solid transparent;
+                        }
+                        svg{
+                            margin-left: 0px;
+                            opacity: 1;
+                            transition: all 300ms;
+                        }
+                    }
+                    .active:hover{
+                        a{
+                            color: $white;
+                            scale: 1;
+                        }
+                    }
+                }
+                ul:hover{
+                    li{
+                        a{
+                            width: 100%;
+                            height: 100%;
+                            border-radius: 0%;
+                            color: $white-opacity;
+                            border: 1px solid transparent;
+                            transition: all 300ms;
+                        }
+                        svg{
+                            transform: rotateZ(90deg);
+                            scale: 1.1;
+                            margin-left: 170px;
+                        }
+                    }
+                    .active{
+                        a{
+                            color: $white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

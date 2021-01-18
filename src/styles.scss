@@ -1,1 +1,109 @@
-/* You can add global styles to this file, and also import other style files */
+@import "./assets/styles/imports";
+@import "./assets/styles/variables";
+
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    cursor: url('../src/assets/img/cursor/cursor-custom.svg'), auto;
+    background: $background;
+    transition: all 300ms;
+}
+
+//Buttons
+.btn-pink{
+    font-family: $WorkSans;
+    background: $pink;
+    display: block;
+    padding: 0px 10px;
+    width: 150px;
+    height: 50px;
+    line-height: 50px;
+    text-decoration: none;
+    color: $white;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid $pink;
+    transition: all 600ms;
+}
+.btn-pink:hover{
+    transition: all 600ms;
+    scale: 1.1;
+    background: transparent;
+}
+.btn-blue{
+    font-family: $WorkSans;
+    background: $blue;
+    display: block;
+    padding: 0px 10px;
+    min-width: 150px;
+    height: 50px;
+    line-height: 50px;
+    text-decoration: none;
+    color: $white;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid $blue;
+    transition: all 600ms;
+}
+.btn-blue:hover{
+    transition: all 600ms;
+    scale: 1.1;
+    background: transparent;
+}
+
+//Texts
+.text{
+    color: white;
+}
+.text-ubuntu{
+    font-family: $Ubuntu;
+}
+
+//Cursors
+.cursor-border{
+    cursor: url('./assets/img/cursor/cursor-custom-border.svg'), auto;
+}
+.cursor-purple{
+    cursor: url('./assets/img/cursor/cursor-custom-purple.svg'), auto;
+}
+
+//Media queries
+@media (max-width:800px){
+    .container{
+        margin: 0px auto;
+        width: 90%;
+        margin-top: 100px;
+        position: relative;
+        z-index: 0;
+    }
+
+    .btn-blue{
+        min-width: 150px;
+        height: auto;
+        padding: 0px 0px;
+    }
+}
+
+@media (min-width:800px){
+    .container{
+        margin: 0px auto;
+        margin-top: 100px;
+        margin-bottom: 100px;
+        width: 70%;
+        padding: 0px 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media (max-width:1080px) and (min-width:800px){
+    .container{
+        width: 55%;
+    }
+}
+

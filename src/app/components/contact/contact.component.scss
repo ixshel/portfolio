@@ -1,0 +1,173 @@
+@import "../../../assets/styles/imports";
+@import "../../../assets/styles/variables";
+
+//General styles
+.container{
+    position: relative;
+    z-index: 11;
+    display: grid;
+    
+    .form{
+        width: 60%;
+        margin: 0px auto;
+
+        form{
+            width: 100%;
+            display: grid;
+            grid-template-rows: repeat(7, auto);
+
+            input, label, textarea{
+                margin: 20px 0px;
+            }
+
+            label{
+                color: $white;
+                font-size: 20px;
+                line-height: 22px;
+                margin-bottom: 0;
+                font-family: $WorkSans;
+            }
+
+            textarea{
+                height: 100px;
+            }
+
+            .inputs{
+                border: 2px solid $grey-blue;
+                background: transparent;
+                color: $grey-blue;
+                border-radius: 5px;
+                padding: 10px;
+                font-size: 17px;
+                font-family: $Ubuntu;
+            }
+
+            .inputs:focus{
+                font-weight: bold;
+            }
+
+            .btn-pink{
+                font-size: 16px;
+                // width: 0%;
+            }
+        }
+    }
+    .info{
+        margin: 0px auto;
+        
+        .info-content{
+            display: grid;
+/*             grid-template-rows: repeat(4, 1fr); */
+
+            h1{
+                color: $white;
+                font-family: $WorkSans;
+                letter-spacing: 2px;
+                font-weight: normal;
+                font-size: 35px;
+            }
+            
+            div{
+                margin: 20px 0px;
+
+                span{
+                    color: $white;
+                    font-family: $Ubuntu;
+                    font-size: 20px;
+                    margin-left: 10px;
+                }
+
+                a{
+                    color: $white;
+                    margin-left: 10px;
+                }
+            }
+
+        }
+
+    }
+}
+
+@media (min-width: 800px){
+    .container{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+
+        .form{
+            width: 90%;
+        }
+
+        .info{
+            width: 100%;
+            height: 100%;
+            
+            .info-content{
+                align-items: center;
+                margin-top: 25%;
+
+            }
+
+        }
+
+    }
+
+}
+
+@media (max-width: 800px){
+
+    .container{
+        z-index: 1;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        padding-bottom: 35vh;
+        
+        .form{
+            width: 95%;
+    
+            form{
+    
+                input, label, textarea{
+                    margin: 10px 0px;
+                }
+    
+                label{
+                    font-size: 16px;
+                    line-height: 18px;
+                }
+    
+                .inputs{
+                    padding: 10px;
+                    font-size: 13px;
+                }
+    
+            }
+        }
+    }
+    .info{
+        
+        .info-content{
+
+            .contact{
+                display: block;
+                font-size: 20px;
+                margin-bottom: 15px;
+            }
+            
+            #info-location, #info-number, #info-email{
+                margin: 5px 0px;
+
+                span{
+                    font-size: 17px;
+                    margin-left: 10px;
+                }
+
+                a{
+                    margin-left: 8px;
+                }
+            }
+
+        }
+
+    }
+
+}
