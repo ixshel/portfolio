@@ -101,9 +101,10 @@ body{
     }
 }
 
-@media (max-width:1080px) and (min-width:800px){
+@media screen and (max-width: 1090px) and (min-width: 800px){
+    
     .container{
-        width: 55%;
+        width: 90%;
     }
-}
 
+}

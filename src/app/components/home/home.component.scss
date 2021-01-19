@@ -8,7 +8,7 @@
 
         h1{
             position: relative;
-            z-index: 11;
+            z-index: 1;
             display: block;
             color: $pink;
             font-weight: 400;
@@ -110,7 +110,7 @@
         .home{
             display: grid;
             grid-template-rows: auto;
-            grid-template-columns: 1fr;
+            grid-template-columns: auto;
 
             .title{
                 grid-row: 1;
@@ -189,7 +189,7 @@
                 
                 img{
                     opacity: 0;
-                    width: 100%;
+                    width: 200px;
                     border-radius: 300px;
                     animation: fade_text 1s ease-in-out forwards 4s;
                 }
@@ -198,5 +198,4 @@
         }
     }
 }
-@media (max-width: 1024px) and (min-width: 800px){
-}
+

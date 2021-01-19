@@ -1,98 +1,101 @@
 @import "../../../assets/styles/imports";
 @import "../../../assets/styles/variables";
 
-.container-menu{
-    z-index: 10;
-    width: 100%;
-    font-family: $WorkSans;
-    font-weight: 400;
-    position: fixed;
-    top: 0;
-    
-    nav{
-        margin-left: 50%;
-        transform: translate(-50%);
+
+@media screen and (min-width: 300px){
+
+    .container-menu{
+        z-index: 10;
         width: 100%;
+        font-family: $WorkSans;
+        font-weight: 400;
+        position: fixed;
+        top: 0;
         
-        ul{
-            padding-top: 20px;
-            background: $background;
-            display: flex;
-            justify-content: space-around;
-            list-style: none;
+        nav{
+            margin-left: 50%;
+            transform: translate(-50%);
+            width: 100%;
             
-            li{
+            ul{
+                padding-top: 20px;
+                background: $background;
                 display: flex;
-                justify-content: center;
-                margin: 10px 0px;
-                overflow: hidden;
-                color: $white-opacity;
+                justify-content: space-around;
+                list-style: none;
                 
-                
-                a{
-                    display: inline-block;
-                    font-size: 17px;
-                    text-decoration: none;
-                }
-                #home-option{
-                    transform: translateY(100px);
-                    animation: show_text_option 1200ms ease-in-out forwards 500ms;    
-                }
-                #work-option{
-                    transform: translateY(100px);
-                    animation: show_text_option 1200ms ease-in-out forwards 700ms;
-                }
-                #about-option{
-                    transform: translateY(100px);
-                    animation: show_text_option 1200ms ease-in-out forwards 900ms;    
-                }
-                #skills-option{
-                    transform: translateY(100px);
-                    animation: show_text_option 1200ms ease-in-out forwards 1100ms;    
-                }
-                #contact-option{
-                    transform: translateY(100px);
-                    animation: show_text_option 1200ms ease-in-out forwards 1300ms;    
-                }
-                @keyframes show_text_option {
-                    from{
+                li{
+                    display: flex;
+                    justify-content: center;
+                    margin: 10px 0px;
+                    overflow: hidden;
+                    color: $white-opacity;
+                    
+                    
+                    a{
+                        display: inline-block;
+                        font-size: 17px;
+                        text-decoration: none;
+                    }
+                    #home-option{
                         transform: translateY(100px);
+                        animation: show_text_option 1200ms ease-in-out forwards 500ms;    
                     }
+                    #work-option{
+                        transform: translateY(100px);
+                        animation: show_text_option 1200ms ease-in-out forwards 700ms;
+                    }
+                    #about-option{
+                        transform: translateY(100px);
+                        animation: show_text_option 1200ms ease-in-out forwards 900ms;    
+                    }
+                    #skills-option{
+                        transform: translateY(100px);
+                        animation: show_text_option 1200ms ease-in-out forwards 1100ms;    
+                    }
+                    #contact-option{
+                        transform: translateY(100px);
+                        animation: show_text_option 1200ms ease-in-out forwards 1300ms;    
+                    }
+                    @keyframes show_text_option {
+                        from{
+                            transform: translateY(100px);
+                        }
+                        to{
+                            transform: translateY(0%);
+                        }
+                    }
+                    svg{
+                        display: none;
+                    }
+                }
+                .active{
+                    animation: border 1s ease forwards 200ms;
+                    color: $white;
+                }
+                .active:focus{
+                    outline: none;
+                }
+                @keyframes border {
                     to{
-                        transform: translateY(0%);
+                        padding-bottom: 10px;
+                        border-bottom: 5px solid $pink;
                     }
                 }
-                svg{
-                    display: none;
+                .inactive{
+                    animation: whitout_border 1.5s ease forwards 1s;
                 }
-            }
-            .active{
-                animation: border 1s ease forwards 200ms;
-                color: $white;
-            }
-            .active:focus{
-                outline: none;
-            }
-            @keyframes border {
-                to{
-                    padding-bottom: 10px;
-                    border-bottom: 5px solid $pink;
-                }
-            }
-            .inactive{
-                animation: whitout_border 1.5s ease forwards 1s;
-            }
-            @keyframes whitout_border {
-                to{
-                    border-bottom: 5px solid transparent;
+                @keyframes whitout_border {
+                    to{
+                        border-bottom: 5px solid transparent;
+                    }
                 }
             }
         }
     }
 }
 
-
-@media (min-width: 800px){
+@media (min-width: 1090px){
 
     header{
         

@@ -1,7 +1,11 @@
 @import "../../../assets/styles/imports";
 @import "../../../assets/styles/variables";
 
-@media (max-width: 800px){
+footer{
+    position: relative;
+}
+
+@media (max-width: 1090px){
 
     footer{
         margin: 20px 0px;
@@ -44,7 +48,7 @@
     }
 }
 
-@media (min-width: 800px){
+@media (min-width: 1090px){
     footer{
         position: fixed;
         top: 0;
