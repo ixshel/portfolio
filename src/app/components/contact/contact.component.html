@@ -20,14 +20,15 @@
                 placeholder="Email"
                 [(ngModel)]="email">
             <label for="message">Type your message</label>
-            <input
+            <textarea
                 class="inputs"
                 name="messageContact"
                 #messageContact
                 id="input-message"
                 placeholder="Message"
                 [(ngModel)]="message">
-            <input type="submit" value="Send Message" class="btn-pink">
+            </textarea>
+            <input mat-stroked-button type="submit" value="Send Message" class="btn-pink">
         </form>
     </div>
     <!-- <div class="info">

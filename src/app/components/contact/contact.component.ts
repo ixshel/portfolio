@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { CrudFirebaseService } from '../../services/crud-firebase.service';
+
+//Angular material
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-contact',
@@ -14,16 +17,27 @@ export class ContactComponent implements OnInit {
   message: string;
 
   constructor(
-    public crudApi: CrudFirebaseService
+    public crudApi: CrudFirebaseService,
+    private _snackBar: MatSnackBar
   ) { }
 
   ngOnInit(): void {
+  }
+
+  snackBarRef(){
+
   }
 
   onSubmit(form: NgForm) {
     this.crudApi.AddContactInfo(form.value);
     // console.log(form.value.emailContact);
     form.resetForm();
+    this.snackBar('Message sent');
+  }
+  snackBar(message){
+    this._snackBar.open(message, 'OK',{
+      duration: 3000
+    });
   }
 
 }

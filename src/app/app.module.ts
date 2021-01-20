@@ -24,6 +24,10 @@ import { environment } from 'src/environments/environment'
 
 //Services
 import { CrudFirebaseService } from './services/crud-firebase.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+//Angular material
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -45,8 +49,14 @@ import { CrudFirebaseService } from './services/crud-firebase.service';
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
+    BrowserAnimationsModule,
+    MatSnackBarModule
   ],
-  providers: [SkillsService,WorkService,CrudFirebaseService],
+  providers: [
+    SkillsService,
+    WorkService,
+    CrudFirebaseService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
