@@ -23,6 +23,7 @@ export class ContactComponent implements OnInit {
   onSubmit(form: NgForm) {
     this.crudApi.AddContactInfo(form.value);
     // console.log(form.value.emailContact);
+    form.resetForm();
   }
 
 }
