@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +16,14 @@ import { SkillsService } from './services/skills.service';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { WorkService } from './services/works.service';
 import { SplitPipe } from './pipes/split.pipe';
+
+//Firebase
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { environment } from 'src/environments/environment'
+
+//Services
+import { CrudFirebaseService } from './services/crud-firebase.service';
 
 @NgModule({
   declarations: [
@@ -32,9 +41,12 @@ import { SplitPipe } from './pipes/split.pipe';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
   ],
-  providers: [SkillsService,WorkService],
+  providers: [SkillsService,WorkService,CrudFirebaseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
