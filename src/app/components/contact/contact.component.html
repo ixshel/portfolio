@@ -1,34 +1,40 @@
 <div class="container">
     <div class="form">
         <form #formContact="ngForm" (submit)="onSubmit(formContact)">
-            <label for="name">What is your name</label>
+            <div class="labels-container overflow">
+                <label class="text-bottom-to-top-all" for="name">What is your name</label>
+            </div>
             <input 
-                class="inputs" 
+                class="inputs fade-text" 
                 type="text"
                 name="nameContact"
                 #nameContact
                 id=""
                 placeholder="Name"
                 [(ngModel)]="name">
-            <label for="email">What is your email</label>
+            <div class="labels-container overflow">
+                <label class="text-bottom-to-top-all" for="email">What is your email</label>
+            </div>
             <input 
-                class="inputs"
+                class="inputs fade-text"
                 type="text"
                 name="emailContact"
                 #emailContact
                 id=""
                 placeholder="Email"
                 [(ngModel)]="email">
-            <label for="message">Type your message</label>
+            <div class="labels-container overflow">
+                <label class="text-bottom-to-top-all" for="message">Type your message</label>
+            </div>
             <textarea
-                class="inputs"
+                class="inputs fade-text"
                 name="messageContact"
                 #messageContact
                 id="input-message"
                 placeholder="Message"
                 [(ngModel)]="message">
             </textarea>
-            <input mat-stroked-button type="submit" value="Send Message" class="btn-pink">
+            <input mat-stroked-button type="submit" value="Send Message" class="btn-pink fade-text">
         </form>
     </div>
     <!-- <div class="info">
@@ -49,7 +55,6 @@
             <div id="info-email">
                 <img src="./assets/img/icons/email.svg" alt="">
                 <span>
-                    <a href="mailto:salvador.sol.ssi.13@gmail.com">salvador.sol.ssi.13@gmail.com</a>
                 </span>
             </div>
         </div>

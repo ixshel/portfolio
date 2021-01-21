@@ -9,6 +9,8 @@ footer{
 
     footer{
         margin: 20px 0px;
+        padding-bottom: 40px;
+        padding-top: 20px;
 
         .social-media{
             margin: 0px auto;
@@ -48,7 +50,7 @@ footer{
     }
 }
 
-@media (min-width: 1090px){
+@media (min-width: 1091px){
     footer{
         position: fixed;
         top: 0;

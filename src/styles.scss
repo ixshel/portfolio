@@ -109,5 +109,36 @@ body{
     }
 
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+// html, body { height: 100%; }
+// body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+//animations
+.overflow{
+    overflow: hidden;
+}
+
+.text-bottom-to-top-all{
+    animation: text_bottom_to_top 1.2s ease-in-out forwards;
+    transform: translateY(50px);
+}
+
+.text-bottom-to-top-all-3500ms{
+    animation: text_bottom_to_top 1.2s ease-in-out forwards 3.5s;
+    transform: translateY(100px);
+}
+
+@keyframes text_bottom_to_top {to{
+        transform: translateY(0);
+    }
+}
+
+.fade-text{
+    opacity: 0;
+    animation: fade_text 1s ease-in-out forwards 0.5s;
+}
+
+@keyframes fade_text{
+    to{
+        opacity: 1;
+    }
+}
