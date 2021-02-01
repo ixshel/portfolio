@@ -1,9 +1,10 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { CrudFirebaseService } from '../../services/crud-firebase.service';
 
 //Angular material
 import {MatSnackBar} from '@angular/material/snack-bar';
+import { Contact } from 'src/app/models/contact.model';
 
 @Component({
   selector: 'app-contact',
@@ -16,12 +17,27 @@ export class ContactComponent implements OnInit {
   email: string;
   message: string;
 
+  messagesBot: Contact[];
+  messageTemp: string;
+  messagesArr: string[] = ['Hello, welcome to the contact seccion. What is your name?'];
+
   constructor(
     public crudApi: CrudFirebaseService,
     private _snackBar: MatSnackBar
   ) { }
 
   ngOnInit(): void {
+
+    this.crudApi.GetChatBot()
+      .snapshotChanges()
+      .subscribe( (messages:any[]) => {
+        this.messagesBot = [];
+        messages.forEach(element =>{
+          let x = element.payload.toJSON();
+          x["$key"]=element.key;
+          this.messagesBot.push(x as Contact);
+        })
+      });
   }
 
   snackBarRef(){
@@ -38,6 +54,11 @@ export class ContactComponent implements OnInit {
     this._snackBar.open(message, 'OK',{
       duration: 3000
     });
+  }
+
+  onSendMessage(form: NgForm){
+    this.messagesArr.push(form.value.contactInput);
+    console.log(this.messagesArr)
   }
 
 }

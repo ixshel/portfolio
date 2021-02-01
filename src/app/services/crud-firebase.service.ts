@@ -21,9 +21,8 @@ export class CrudFirebaseService {
     console.log(form.nameContact, form.emailContact, form.messageContact);
   }
   
-  GetContactInfo(form: Contact){
-    this.all_form_info_ref = this.db.list('contact');
-    return this.all_form_info_ref;
+  GetChatBot(){
+    return this.all_form_info_ref = this.db.list('bot');
   }
   
 }

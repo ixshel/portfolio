@@ -4,7 +4,7 @@
 //General styles
 .container{
     position: relative;
-    z-index: 11;
+    z-index: 1;
     
     .form{
         width: 60%;
@@ -60,6 +60,53 @@
                 font-size: 16px;
             }
         }
+
+        #chat{
+            height: 75vh;
+            // background-color: $dark-blue;
+            // border: 1px solid white;
+            color: $dark-blue;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr;
+
+            span{
+                display: block;
+                min-width: 10%;
+                max-width: 55%;
+                font-size: 17px;
+                height: fit-content;
+                font-family: $Ubuntu;
+                padding: 10px 15px;
+                border-radius: 10px;
+                background-color: $grey-blue;
+            }
+
+            .messageLeft{
+                justify-self: left;
+            }
+
+            .messageRight{
+                justify-self: right;
+            }
+
+            form{
+                position: absolute;
+                width: 500px;
+                left: 0;
+                right: 0;
+                margin: auto;
+                bottom: 0px;
+                display: grid;
+                grid-template-columns: 12fr 2fr;
+
+                input{
+                    margin: 10px;
+                }
+
+            }
+        }        
+
     }
     .info{
         margin: 0px auto;
@@ -95,6 +142,8 @@
 
     }
 }
+
+
 
 @media (min-width: 800px){
     .container{

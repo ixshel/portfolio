@@ -34,31 +34,33 @@
                 placeholder="Message"
                 [(ngModel)]="message">
             </textarea>
-            <input mat-stroked-button type="submit" value="Send Message" class="btn-pink fade-text">
+            <input mat-stroked-button type="submit" value="Send Message" class="btn-pink fade-text cursor-border">
         </form>
+    
+        <!-- <div *ngFor="let message of messagesBot">
+            <span>
+                {{message.name}}
+            </span>
+        </div> -->
+
+        <!-- <div id="chat">
+            
+            <span 
+                *ngFor="let message of messagesArr"
+                [ngClass]="{messageRight: message | indexOf : messsage , messageLeft: messagesArr.length % 2 != 0}"
+            >
+                {{message}}
+            </span>
+
+            <form action="" id="" #chatContact="ngForm" (submit)="onSendMessage(chatContact)">
+                
+                <input type="text" name="contactInput" #contactInput id="" [(ngModel)]="messageTemp">
+                <input type="submit" value="Send">
+                
+            </form>
+            
+        </div> -->
     </div>
-    <!-- <div class="info">
-        <div class="info-content">
-            <h1 class="contact">Contact Information</h1>
-            <div id="info-location">
-                <img src="./assets/img/icons/location.svg" alt="">
-                <span>
-                    Guadalajara, Jalisco
-                </span>
-            </div>
-            <div id="info-number">
-                <img src="./assets/img/icons/number.svg" alt="">
-                <span>
-                    33-19-65-18-95
-                </span>
-            </div>
-            <div id="info-email">
-                <img src="./assets/img/icons/email.svg" alt="">
-                <span>
-                </span>
-            </div>
-        </div>
-    </div> -->
 </div>
 
 <app-footer></app-footer>
