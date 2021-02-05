@@ -85,12 +85,20 @@
     }
     #btn-contact{
         margin: 20px 0px;
-        opacity: 0;
-        animation: fade_text 1s ease-in-out forwards 4s;
     }
     .profile-image{
         display: none;
     }
+
+    .btn{
+        opacity: 0;
+        animation: fade_text 1s ease-in-out forwards 4s;
+    }
+
+    #btn-download-cv{
+        width: fit-content;
+    }
+
 }
 
 @media (min-width: 800px){
@@ -151,10 +159,19 @@
                     }
                 }
             }
-            #btn-contact{
+            .btn-pink, .btn-blue{
+                position: relative;
+                z-index: 11;
+                align-self: center;
                 grid-row: 4;
                 grid-column: 1;
                 transition: all 600ms;
+                width: fit-content;
+            }
+            
+            #btn-download-cv{
+                margin-left: 150px;
+                text-transform: uppercase;
             }
            
         }

@@ -21,8 +21,11 @@
             <img src="./assets/img/me-one.webp" alt="Salvador Solis">
         </div>
         
-        <a [routerLink]="['/contact']" id="btn-contact" class="btn-pink cursor-border">
+        <a [routerLink]="['/contact']" id="btn-contact" class="btn-pink cursor-border btn">
             CONTACT ME
+        </a>
+        <a id="btn-download-cv" class="btn-blue cursor-border btn" (click)="downloadPdf.downloadPdf()">
+            Download CV
         </a>
     </div>
 </div>

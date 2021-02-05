@@ -15,22 +15,28 @@ export class SkillsService{
             'Me gusta usar este preprosesador de CSS, por la anidacion e identación, variables y operadores.'
         ),
         new Skill(
-            'SVG',
-            'p-75',
-            'svg',
-            'Puedo crear svg con programas de vectorizacioón y manipularlos en una página web con ayuda de CSS y JavaScript.'
-        ),
-        new Skill(
             'Bootstrap',
             'p-70',
             'bootstrap',
             'Se como usar bootstrap en mis proyectos junto con sus componentes de acuerdo a la documentación.'
-        ),
+            ),
         new Skill(   
             'JavaScript',
             'p-80',
             'js',
             'Uso JavaScript para crear aplicaciones web Front-End. Tengo conocimientos básicos de node.js y typescritp.'
+            ),
+        new Skill(
+            'React',
+            'p-75',
+            'react',
+            ''
+        ),
+        new Skill(
+            'Angular',
+            'p-75',
+            'angular',
+            'Tengo los conocimientos suficientes para crear una aplicación web básica con Angular 11.'
         ),
         new Skill(   
             'JQuery',
@@ -49,12 +55,6 @@ export class SkillsService{
             'p-80',
             'terminal',
             'Conozco los comandos basicos de la terminal en sistemas unix.'
-        ),
-        new Skill(
-            'Angular',
-            'p-75',
-            'angular',
-            'Tengo los conocimientos suficientes para crear una aplicación web básica con Angular 11.'
         ),
         new Skill(
             'Figma',

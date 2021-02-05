@@ -25,6 +25,7 @@ import { environment } from 'src/environments/environment'
 //Services
 import { CrudFirebaseService } from './services/crud-firebase.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DownloadPdfService } from './services/download-pdf.service';
 
 //Angular material
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
@@ -55,7 +56,8 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
   providers: [
     SkillsService,
     WorkService,
-    CrudFirebaseService
+    CrudFirebaseService,
+    DownloadPdfService
   ],
   bootstrap: [AppComponent]
 })
