@@ -48,7 +48,7 @@ export class ContactComponent implements OnInit {
 
   onSubmit(form: NgForm) {
     if(this.name !== '' && this.email !== '' && this.message !== '') {
-      if(this.email.search(this.reEmail) !== -1){
+      if(this.email.toLowerCase().search(this.reEmail) !== -1){
         this.crudApi.AddContactInfo(form.value);
         form.resetForm();
         this.snackBar('Message sent');
