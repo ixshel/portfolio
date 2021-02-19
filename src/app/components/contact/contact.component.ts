@@ -6,7 +6,6 @@ import { CrudFirebaseService } from '../../services/crud-firebase.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import { Contact } from 'src/app/models/contact.model';
 
-import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
 import { MailService } from '../../services/mail.service';
 
 @Component({
@@ -16,8 +15,8 @@ import { MailService } from '../../services/mail.service';
 })
 
 export class ContactComponent implements OnInit {
-  name: string;
-  email: string;
+  from_name: string;
+  from_email: string;
   message: string;
 
   reEmail: string;
@@ -33,8 +32,8 @@ export class ContactComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.name = '';
-    this.email = '';
+    this.from_name = '';
+    this.from_email = '';
     this.message = '';
     this.reEmail = '^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$';
   }
@@ -47,8 +46,8 @@ export class ContactComponent implements OnInit {
       template_params: form.value
     }
 
-    if(this.name !== '' && this.email !== '' && this.message !== '') {
-      if(this.email.toLowerCase().search(this.reEmail) !== -1){
+    if(this.from_name !== '' && this.from_email !== '' && this.message !== '') {
+      if(this.from_email.toLowerCase().search(this.reEmail) !== -1){
         this.mailService.send(data).subscribe((response) => {
           console.log('email respomnse: ', response);
             form.resetForm();
@@ -60,9 +59,9 @@ export class ContactComponent implements OnInit {
       }else {
         this.snackBar('Use a valid email');
       }
-    }else if(this.name == ''){
+    }else if(this.from_name == ''){
       this.snackBar('The name is required');
-    }else if(this.email == ''){
+    }else if(this.from_email == ''){
       this.snackBar('The email is required');
     }else if(this.message == ''){
       this.snackBar('The meessage is required');
