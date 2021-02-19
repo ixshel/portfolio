@@ -39,9 +39,9 @@ export class SkillsService{
             'Tengo los conocimientos suficientes para crear una aplicación web básica con Angular 11.'
         ),
         new Skill(   
-            'JQuery',
+            'TypeScript',
             'p-75',
-            'jquery',
+            'typescript',
             'Tengo conocimientos de JQuery para manipular el DOM y crear animaciones.'
         ),
         new Skill(
@@ -57,15 +57,15 @@ export class SkillsService{
             'Conozco los comandos basicos de la terminal en sistemas unix.'
         ),
         new Skill(
-            'Figma',
+            'Java',
             'p-70',
-            'figma',
+            'java',
             'Diseño prototipos sencillos en este software.'
         ),
         new Skill(
-            'Inkscape',
+            'NodeJS',
             'p-70',
-            'inkscape',
+            'nodejs',
             'Es el software que uso para diseñar gráficos vectoriales.'
         ),
         new Skill(
@@ -73,6 +73,12 @@ export class SkillsService{
             'p-60',
             'ux-ui',
             'Tengo conocimientos muy básicos en esta area, pero trato de ser mejor diseñando productos digitales usando la metodología Lean.'
+        ),
+        new Skill(
+            'MongoDB',
+            'p-85',
+            'mongodb',
+            'Correcto uso de las etiquetas semanticas de HTML 5. Conocimentos de CSS 3 de flexbox, grid layout, transiciones y animaciones.'
         )
     ];
 }
