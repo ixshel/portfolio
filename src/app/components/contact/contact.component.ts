@@ -6,6 +6,9 @@ import { CrudFirebaseService } from '../../services/crud-firebase.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import { Contact } from 'src/app/models/contact.model';
 
+import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
+import { MailService } from '../../services/mail.service';
+
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
@@ -25,7 +28,8 @@ export class ContactComponent implements OnInit {
 
   constructor(
     public crudApi: CrudFirebaseService,
-    private _snackBar: MatSnackBar
+    private _snackBar: MatSnackBar,
+    private mailService: MailService
   ) { }
 
   ngOnInit(): void {
@@ -33,25 +37,26 @@ export class ContactComponent implements OnInit {
     this.email = '';
     this.message = '';
     this.reEmail = '^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$';
-
-    // this.crudApi.GetChatBot()
-    //   .snapshotChanges()
-    //   .subscribe( (messages:any[]) => {
-    //     this.messagesBot = [];
-    //     messages.forEach(element =>{
-    //       let x = element.payload.toJSON();
-    //       x["$key"]=element.key;
-    //       this.messagesBot.push(x as Contact);
-    //     })
-    //   });
   }
 
   onSubmit(form: NgForm) {
+    let data = {
+      service_id: 'service_6lbt26p',
+      template_id: 'template_tzfpmuk',
+      user_id: 'user_JXRxbwA4WQXKVTtpe1bd7',
+      template_params: form.value
+    }
+
     if(this.name !== '' && this.email !== '' && this.message !== '') {
       if(this.email.toLowerCase().search(this.reEmail) !== -1){
-        this.crudApi.AddContactInfo(form.value);
-        form.resetForm();
-        this.snackBar('Message sent');
+        this.mailService.send(data).subscribe((response) => {
+          console.log('email respomnse: ', response);
+            form.resetForm();
+            this.snackBar('Message sent');
+        }, error => {
+          this.snackBar(error.message);
+        });
+        
       }else {
         this.snackBar('Use a valid email');
       }
